@@ -1,11 +1,19 @@
 import type { PageLoad } from "./$types";
 
-export const load: PageLoad = async ({fetch}) => {
+export const load: PageLoad = async ({ fetch }) => {
+  const pages = [1, 2, 3, 4, 5]; // modify this if want more data
+  const results = [];
 
-    const recents = await fetch('/api/anime/recent');
-    const topAiring = await fetch('/api/anime/top-airing');
-    return {
-        recents: recents.json(),
-        topAiring: topAiring.json(),
-    }
+  for (const page of pages) {
+    const response = await fetch(`/api/anime/recent?page=${page}`);
+    const data = await response.json();
+    results.push(...data.results);
+  }
+
+  return {
+    recents: {
+      results
+    },
+    topAiring: await fetch('/api/anime/top-airing').then(res => res.json()),
+  };
 };
