@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { AppShell } from '@skeletonlabs/skeleton';
-	import TopCard from '../../components/TopCard.svelte';
+	import TopCard from '$lib/components/TopCard.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;

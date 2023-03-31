@@ -6,7 +6,7 @@
 	import { Drawer, drawerStore } from '@skeletonlabs/skeleton';
 
 	// Local Features
-	import Navigation from '$lib/Navigation/Navigation.svelte';
+	import Navigation from '$lib/components/Navigation.svelte';
 
 	// Stylesheets
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
