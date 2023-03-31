@@ -35,7 +35,7 @@
 		<AppBar>
 			<svelte:fragment slot="lead">
 				<div class="flex items-center">
-					<button class="md:hidden btn btn-sm mr-4" on:click={drawerOpen}>
+					<button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
 						<span>
 							<svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
 								<rect width="100" height="20" />
@@ -48,7 +48,7 @@
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<div class="hidden md:block">
+				<div class="hidden lg:block">
 					<a class="btn btn-sm" href="/">Home</a>
 					<a class="btn btn-sm" href="/kdrama">Kdrama</a>
 					<a class="btn btn-sm" href="/anime">Anime</a>
@@ -61,6 +61,7 @@
 	<svelte:fragment slot="sidebarLeft">
 		<Navigation />
 	</svelte:fragment>
+	
 	<!-- Page Route Content -->
 	<slot />
 </AppShell>
