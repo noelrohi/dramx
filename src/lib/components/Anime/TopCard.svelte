@@ -16,7 +16,7 @@
 		<div class="p-1">
 			<div class="line-clamp-3 hover:line-clamp-none">
 				{#each data.genres as genre}
-					<span class="badge variant-filled text-xs">{genre}</span>
+					<span class="badge variant-ghost-surface text-xs">{genre}</span>
 				{/each}
 			</div>
 		</div>

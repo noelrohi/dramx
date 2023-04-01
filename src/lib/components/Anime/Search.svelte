@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { Autocomplete, localStorageStore, type AutocompleteOption } from '@skeletonlabs/skeleton';
 	import type { Writable } from 'svelte/store';
 	const optionsStore: Writable<AutocompleteOption[]> = localStorageStore('optionsStore', []);
@@ -9,13 +10,15 @@
 		if (data.results.length > 0) {
 			const options = data.results.map((option: any) => ({
 				label: option.title,
-				value: option.title
+				value: option.id
 			}));
 			optionsStore.set(options);
 		}
 	}
 	function onDemoSelection(event: any): void {
 		inputQuery = event.detail.label;
+		const path = event.detail.value;
+		goto(`/anime/${path}`)
 	}
 
 	$: if (inputQuery) fetchQuery();
@@ -35,6 +38,7 @@
 		<Autocomplete
 			bind:input={inputQuery}
 			options={$optionsStore}
+			emptyState="No Anime Found!"
 			class="card w-full max-w-sm max-h-48 p-4 overflow-y-auto {autocompClass}"
 			on:selection={onDemoSelection}
 		/>

@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { AppShell, Paginator } from '@skeletonlabs/skeleton';
-	import TopCard from '$lib/components/TopCard.svelte';
+	import TopCard from '$lib/components/Anime/TopCard.svelte';
 	import type { PageData } from './$types';
-	import RecentRelease from '$lib/components/RecentRelease.svelte';
-	import Search from '$lib/components/Search.svelte';
+	import RecentRelease from '$lib/components/Anime/RecentRelease.svelte';
+	import Search from '$lib/components/Anime/Search.svelte';
 
 	export let data: PageData;
-	// console.log(data.recents);
 
 	// PaginatorSettings
 	const recents = data.recents.results;
