@@ -1,7 +1,7 @@
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ fetch }) => {
-  const pages = [1, 2, 3, 4, 5]; // modify this if want more data
+  const pages = [1, 2]; // modify this if want more data
   const results = [];
 
   for (const page of pages) {
