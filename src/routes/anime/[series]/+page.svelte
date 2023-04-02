@@ -5,8 +5,9 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+	let episodeId = data.episodes[0].id.split('-episode-')[0]
 	onMount(async () => {
-		goto(`/anime/${data.id}/1`)
+		goto(`/anime/${episodeId}/1`)
 	});
 </script>
 
