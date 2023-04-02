@@ -10,7 +10,13 @@
 		title: data.series.title
 	};
 </script>
-
 <div class="xl:mt-10">
 	<Player {...vidPlayerData} />
+	
 </div>
+
+
+
+
+
+  
