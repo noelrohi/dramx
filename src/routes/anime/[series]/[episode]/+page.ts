@@ -7,6 +7,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
 	const result =  episodeResult.json();
 	const series = seriesResult.json();
 	return {
+		pageName: `- ${params.series.replaceAll("-", " ")} Episode ${params.episode}`,
 		result,
 		series: series,
 		episode: params.episode,

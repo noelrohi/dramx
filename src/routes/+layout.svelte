@@ -12,6 +12,7 @@
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.postcss';
+	import Header from '$lib/components/Header.svelte';
 
 	function drawerOpen(): void {
 		drawerStore.open({});
@@ -21,9 +22,10 @@
 	$: classesSidebarLeft = !$page.error ? 'w-0' : 'w-0 lg:w-64';
 </script>
 
+<Header pageName={$page.data.pageName}/>
 <!-- Drawer -->
 <Drawer>
-	<h2 class="p-4">NRG</h2>
+	<h2 class="p-4">DRAMX</h2>
 	<hr />
 	<Navigation />
 </Drawer>
@@ -44,7 +46,7 @@
 							</svg>
 						</span>
 					</button>
-					<strong class="text-xl uppercase">NRG</strong>
+					<strong class="text-xl uppercase">DRAMX</strong>
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
