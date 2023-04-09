@@ -3,11 +3,11 @@
   export let title: string;
 </script>
 
-<div class="relative" style="padding-bottom: 62.25%">
+<div class="flex flex-row justify-center content-center">
 	<iframe
 	  src={src}
 	  title={title}
-	  class="absolute inset-y-4 w-full h-full xl:h-3/4 xl:w-3/4 xl:inset-x-44 "
+	  class="w-full lg:w-3/4 pt-2 aspect-video"
 	  allowfullscreen
 	  frameborder="0"
 	  scrolling="no"
