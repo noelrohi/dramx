@@ -3,14 +3,16 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	console.log(data);
-	let src = data.result.headers.Referer;
+	// console.log(data);
+	let src: string = data.result.headers.Referer;
 	let vidPlayerData = {
 		src,
 		title: data.series.title
 	};
 
-	let urls = data.series.episodes.map((e: { number: Number }) => e.number);
+	let urls : number[] = data.series.episodes.map((e: { number: number }) => e.number);
+	let currentEpisode: number = parseInt(data.episode);
+	$: slicedUrls = urls.length < 100 ? urls : currentEpisode > 50 ? urls.slice(currentEpisode - 50, currentEpisode + 50) : currentEpisode == urls.length ? urls.slice(currentEpisode - 100, currentEpisode) : urls.slice(0, 100); 
 </script>
 
 <div class="container">
@@ -23,7 +25,7 @@
 				{data.series.description}
 			</p>
 			<div>
-				{#each urls.slice(0, 100) as num}
+				{#each slicedUrls as num}
 					<a href="/anime/{data.series.id}/{num}" class="badge badge-glass">{num}</a>
 				{/each}
 			</div>
